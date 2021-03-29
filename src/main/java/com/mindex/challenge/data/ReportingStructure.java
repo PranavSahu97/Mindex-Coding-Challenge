@@ -1,26 +1,13 @@
 package com.mindex.challenge.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@JsonIgnoreProperties
 public class ReportingStructure {
     private Employee employee;
     private int numberOfReports;
-
-    public ReportingStructure() {
-
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public int getNumberOfReports() {
-        return numberOfReports;
-    }
-
-    public void setNumberOfReports(int numberOfReports) {
-        this.numberOfReports = numberOfReports;
-    }
 }

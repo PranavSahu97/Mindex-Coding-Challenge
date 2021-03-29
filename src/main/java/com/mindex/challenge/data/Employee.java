@@ -1,7 +1,14 @@
 package com.mindex.challenge.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@JsonIgnoreProperties
 public class Employee {
     private String employeeId;
     private String firstName;
@@ -10,12 +17,9 @@ public class Employee {
     private String department;
     private List<Employee> directReports;
 
-    public Employee() {
-    }
-
     @Override
     public int hashCode() {
-        int hashCode = 0;
+        int hashCode = 3;
         hashCode += employeeId.hashCode();
         return hashCode;
     }
@@ -26,53 +30,5 @@ public class Employee {
             return (rs.equals(this.employeeId));
         } else
             return false;
-    }
-
-    public String getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public List<Employee> getDirectReports() {
-        return directReports;
-    }
-
-    public void setDirectReports(List<Employee> directReports) {
-        this.directReports = directReports;
     }
 }

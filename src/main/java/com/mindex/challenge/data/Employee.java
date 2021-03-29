@@ -19,16 +19,16 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        int hashCode = 3;
-        hashCode += employeeId.hashCode();
-        return hashCode;
+        return employeeId.hashCode();
     }
+
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof ReportingStructure){
-            Employee rs = (Employee) obj;
-            return (rs.equals(this.employeeId));
-        } else
+        if(obj == null) return false;
+        if(!(obj instanceof Employee))
             return false;
+        if(obj == this)
+            return true;
+        return this.getEmployeeId() == ((Employee) obj).getEmployeeId();
     }
 }
